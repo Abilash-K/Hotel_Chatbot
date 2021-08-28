@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ChocoLava-Contact</title>
+    <link rel="shortcut icon" href="icon.jpg">
+    <link rel="stylesheet" href="aboutandcontact\css\contact.css">
+    <link rel="stylesheet" href="aboutandcontact\css\nav.css">
+  </head>
+  <body>
+    <!-- nav -->
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+          <div>
+            <div>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- nav end -->
+      <section class="contact-page-section">
+     <div class="container">
+         <div class="sec-title">
+             <div class="title">Contact Us</div>
+               <h2>Let's Get in Touch.</h2>
+           </div>
+           <div class="inner-container">
+             <div class="row clearfix">
+
+                 <!--Form Column-->
+                   <div class="form-column col-md-8 col-sm-12 col-xs-12">
+                     <div class="inner-column">
+
+                           <!--Contact Form-->
+                           <div class="contact-form">
+                               <form method="post" action="sendemail.php" id="contact-form">
+                                   <div class="row clearfix">
+                                       <div class="form-group col-md-6 col-sm-6 co-xs-12">
+                                           <input type="text" name="name" value="" placeholder="Name" required>
+                                       </div>
+                                       <div class="form-group col-md-6 col-sm-6 co-xs-12">
+                                           <input type="email" name="email" value="" placeholder="Email" required>
+                                       </div>
+                                       <div class="form-group col-md-6 col-sm-6 co-xs-12">
+                                           <input type="text" name="subject" value="" placeholder="Subject" required>
+                                       </div>
+                                       <div class="form-group col-md-6 col-sm-6 co-xs-12">
+                                           <input type="text" name="phone" value="" placeholder="Phone" required>
+                                       </div>
+                                       <div class="form-group col-md-12 col-sm-12 co-xs-12">
+                                           <textarea name="message" placeholder="Message"></textarea>
+                                       </div>
+                                       <div class="form-group col-md-12 col-sm-12 co-xs-12">
+                                           <button type="submit" class="theme-btn btn-style-one">Send Now</button>
+                                       </div>
+                                   </div>
+                               </form>
+                           </div>
+                           <!--End Contact Form-->
+
+                       </div>
+                   </div>
+
+                   <!--Info Column-->
+                   <div class="info-column col-md-4 col-sm-12 col-xs-12">
+                     <div class="inner-column">
+                         <h2>Contact Info</h2>
+                           <ul class="list-info">
+                             <li><i class="fas fa-globe"></i>ChocoLava Restaurant Chennai,TamilNadu</li>
+                               <li><i class="far fa-envelope"></i>ChocoLava@email.com</li>
+                               <li><i class="fas fa-phone"></i>+911234567890 <br> +911234567890</li>
+                           </ul>
+
+                           </ul>
+                       </div>
+                   </div>
+
+               </div>
+           </div>
+       </div>
+   </section>
+  </body>
+</html>

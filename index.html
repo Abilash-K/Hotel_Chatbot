@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChocoLava Restaurant</title>
+<link rel="shortcut icon" href="icon.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+<!-- ChatBot -->
+<link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.convform.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+<link rel="stylesheet" href="css/carousel.css">
+
+<link rel="stylesheet" href="nav.css">
+
+</head>
+<body>
+<!-- ChatBot -->
+<div class="chat_icon">
+	<img src="ezgif-2-1c20baa9f592.gif" alt="">
+</div>
+
+<div class="chat_box">
+	<div class="my-conv-form-wrapper">
+		<form action="" method="GET" class="hidden">
+
+      <select data-conv-question="Hello! How can I help you" name="category">
+        <option value="WebDevelopment">Hotel Room Booking ?</option>
+        <option value="DigitalMarketing">Table Booking ?</option>
+      </select>
+
+      <div data-conv-fork="category">
+        <div data-conv-case="WebDevelopment">
+          <input type="text" name="domainName" data-conv-question="Please, tell me your Date of arrival in(dd-mm-yy format)">
+        </div>
+        <div data-conv-case="DigitalMarketing" data-conv-fork="first-question2">
+          <input type="text" name="companyName" data-conv-question="Please, tell me your Date of arrival in(dd-mm-yy format)">
+        </div>
+      </div>
+
+      <input type="text" name="name" data-conv-question="Please, Enter your name">
+
+      <input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you." data-no-answer="true">
+
+      <input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+
+      <select data-conv-question="Please Confirm">
+        <option value="Yes">Confirm</option>
+      </select>
+
+  	</form>
+	</div>
+</div>
+<!-- ChatBot end -->
+
+<!-- nav -->
+<div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- nav -->
+
+
+
+	<!-- <div class="navbar-wrapper">
+		<div class="container">
+
+			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" class="chocoheading" href="index.html"><strong>ChocoLava Restaurant</strong></a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="#tablebooking">Table Booking</a></li>
+
+
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div> -->
+
+
+
+	<!-- Carousel
+	================================================== -->
+	<div id="mainCarousel">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<script
+		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyChAVOv2uGXlqAUk7aicUPjnr1ISlQm3nQ&sensor=false">
+		</script>
+		<script>
+		var myCenter=new google.maps.LatLng(13.0841596,80.2644438);
+		var marker;
+		function initialize()
+		{
+		var mapProp = {
+			center:myCenter,
+			zoom:15,
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+			};
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		marker=new google.maps.Marker({
+			position:myCenter,
+
+			animation:google.maps.Animation.BOUNCE
+			});
+
+		marker.setMap(map);
+
+		// Info open
+		var infowindow = new google.maps.InfoWindow({
+			content:"ChocoLava Restaurant!"
+			});
+
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map,marker);
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		<div id="googleMap" style="height:450px;"></div>
+			<div class="container">
+			<div class="carousel-caption">
+				<a class="btn btn-lg btn-default" href="#" role="button" style="font-size:2em">Order Online Now &raquo;</a>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div><!-- /.carousel -->
+</div>
+
+<div class="mainTitle">
+<div class="container">
+<h1 class="frontpageh1">ChocoLava Restaurant</h1>
+<p>
+A South Indian Hotel with Best price and Delicious Taste in a cheap affordable price!
+</p>
+</div>
+</div>
+
+
+
+	<div class="container marketing">
+		<!-- Three columns of text below the carousel -->
+		<div class="row">
+			<div class="col-lg-4">
+				<img class="img-circle" src="https://imagevars.gulfnews.com/2021/02/28/Dosa-stock-image_177e6a842c3_large.jpg" alt="Generic placeholder image">
+				<h2>Masala DOSA</h2>
+				<p>Masala Dosa originating from South India this crispy dosa, cooked flat thin layered with fermented rice batter and Aloo Masala served with chutney & sambar</p>
+				<p><a class="btn btn-default" href="#" role="button">₹80 Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img class="img-circle" src="https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2019/Schezwan_Masala_Dosa_Recipe_Using_Classic_Idli_Dosa_Batter_34_1600.jpg" alt="Generic placeholder image">
+				<h2>Schezwan DOSA</h2>
+				<p>Schezwan sauce is a spicy and pungent sauce which is well blended noodles and vegetables with little mayonnaise for taste. </p>
+				<p><a class="btn btn-default" href="#" role="button">₹90 Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+		<img class="img-circle" src="https://sukhis.com/wp-content/uploads/2020/01/Dosa.jpg" alt="Lam Tikka">
+				<h2>DOSA</h2>
+				<p>Butter dosa with combination of aloo masala</p>
+				<p><a class="btn btn-default" href="#" role="button">₹70 Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+</div>
+
+
+
+
+<div class="introSection">
+	<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="cntr">We are launching complete online food order system for restaurent and takeaway Only at the rate <br>₹200 </h1>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+ <div class="container marketing">
+	<h2 class="itemsTitle">Breakfast</h2>
+<div id="myCarousel1" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<div class="carousel-inner">
+			<div class="item active">
+			 <div class="row">
+			<div class="col-lg-4">
+				<img src="images\idly.jpg" alt="Generic placeholder image">
+				<h4>Idly</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img src="images\pongal.jpg" alt="Generic placeholder image">
+				<h4>Pongal</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img src="images\uthapam.jpg" class="tiffen" alt="Generic placeholder image">
+				<h4>Onion Uthapam</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+
+
+			</div>
+			<div class="item">
+				<div class="row">
+			<div class="col-lg-4">
+				<img  src="images\vada.webp" alt="Generic placeholder image">
+				<h4>Vada</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img  src="images\milletdosa.jpg" alt="Generic placeholder image">
+				<h4>Milled DOSA</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img  src="images\miniidly.jpg" alt="Generic placeholder image">
+				<h4>Mini Idly</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+			</div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		<a class="right carousel-control" href="#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	</div><!-- /.carousel -->
+</div>
+
+<div class="container marketing">
+	<h2 class="itemsTitle">Lunch</h2>
+<div id="myCarousel2" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<div class="carousel-inner">
+			<div class="item active">
+			 <div class="row">
+			<div class="col-lg-4">
+				 <img src="images\friedrice.jpg" alt="Generic placeholder image">
+				<h4>Veg Pulav</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+			 <img src="images\minimeals.jpg" alt="Generic placeholder image">
+				<h4>Mini Meals</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img src="images\noodles.jpg" alt="Generic placeholder image">
+				<h4>Noodles</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+
+
+
+			</div>
+			<div class="item">
+				<div class="row">
+			<div class="col-lg-4">
+				<img  src="images\roti.jpg" alt="Generic placeholder image">
+				<h4>Butter Naan/Rooti</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img  src="images\paneer-butter-masala-recipe-2.jpg" alt="Generic placeholder image">
+				<h4>Paneer Butter Masala</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img  src="images\GOBI-MANCHURIAN-RED.jpg" alt="Generic placeholder image">
+				<h4>Gobi Manchurian</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+			</div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel2" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		<a class="right carousel-control" href="#myCarousel2" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	</div><!-- /.carousel -->
+</div>
+
+<div class="container marketing">
+	<h2 class="itemsTitle">Dinner</h2>
+<div id="myCarousel3" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<div class="carousel-inner">
+			<div class="item active">
+			 <div class="row">
+			<div class="col-lg-4">
+				<img src="images\kothu.jpg" alt="Generic placeholder image">
+				<h4>Kothu Porotta</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img src="images\poro.jpg" alt="Generic placeholder image">
+				<h4>Porotta</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img src="images\tikka.jpg" alt="Generic placeholder image">
+				<h4>Paneer Tikka</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+
+
+			</div>
+			<div class="item">
+				<div class="row">
+			<div class="col-lg-4">
+				<img  src="images\springroll.jpg" alt="Generic placeholder image">
+				<h4>Spring Roll</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img  src="images\chapath.jpg" alt="Generic placeholder image">
+				<h4>Aloo Paratha</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img  src="images\gobi.jpg" alt="Generic placeholder image">
+				<h4>Gobi 65</h4>
+				<p><a class="btn btn-default" href="#" role="button">Add to cart &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+			</div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel3" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		<a class="right carousel-control" href="#myCarousel3" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	</div><!-- /.carousel -->
+</div>
+
+
+
+
+
+<div class="introSection">
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-5">
+	<h3><strong><em>24/7 Support</strong></em></h3>
+	<p>
+		Start with the “Order now” button, and we'll gently walk you through the motions of placing the order. It doesn’t get easier than that!
+	</p>
+	</div>
+
+	<div class="col-lg-4">
+	<h3><strong><em>On-time Delivery</strong></em></h3>
+	<p>
+		Being late is against our principles. We take even the tightest deadline as a challenge and strive to produce the best in the shortest amount of time.
+	</p>
+
+	</div>
+
+	<div class="col-lg-3">
+	<h3><strong><em>Customized Service</strong></em></h3>
+	<p>
+ however complicated and demanding your order is. Let us take care of your needs,for any complaint or about further information please Reach out to us,by clicking the Cartoon Gif
+
+	</p>
+
+	</div>
+
+	</div>
+	</div>
+</div>
+
+
+ <div class="container marketing">
+ <div id="myCarousel4" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<div class="carousel-inner">
+		<div class="item active">
+		<div class="row featurette">
+			<div class="col-md-7">
+				<h2 class="featurette-heading">Adai<span class="text-muted"> Dosa</span></h2>
+				<p class="lead">Adai is a healthy, protein-rich and nutrient dense lentil crepe from Tamil Nadu cuisine.</p>
+			</div>
+			<div class="col-md-5">
+				<img src="images/adai.jpg" alt="Fish and Chips">
+			</div>
+		</div>
+		</div>
+
+
+<div class="item">
+		<div class="row featurette">
+			<div class="col-md-5">
+				<img src="images/pesarat.jpg" alt="Generic placeholder image">
+			</div>
+			<div class="col-md-7">
+				<h2 class="featurette-heading">Pesarattu<span class="text-muted">Dosa.</span></h2>
+				<p class="lead">Pesarattu Dosa is a famous Andhra breakfast dish. It is nothing but the Green gram Dal Dosa. It is a light and healthy dish which people of diversity can enjoy4! It is usually served with Ginger Chutney.</p>
+			</div>
+		</div>
+		</div>
+
+
+<div class="item">
+		<div class="row featurette">
+			<div class="col-md-7">
+				<h2 class="featurette-heading">Mini Meals <span class="text-muted"> Special</span></h2>
+				<p class="lead">Mini Meals is a common meal in any restaurants in South India. The traditional mini meals always have a sweet and 2 variety rice, a curd rice and a poriyal or crisps.</p>
+			</div>
+			<div class="col-md-5">
+		<img class="img-circle" src="images/minimealsspl.webp" alt="Generic placeholder image">
+			</div>
+		</div>
+		</div>
+	 </div>
+	</div><!-- /.carousel -->
+	</div><!-- /.container -->
+
+		<footer>
+	<div class="container">
+			<p class="pull-right"><a href="#">Back to top</a></p>
+			<p>&copy; 2021 ChocoLava, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	</div>
+		</footer>
+
+		<script src="js\holder.js"></script>
+		<script src="js\bootstrap.min.js" charset="utf-8"></script>
+</body>
+</html>
